@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion this.rootProject.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion this.rootProject.android.minSdkVersion
+        targetSdkVersion this.rootProject.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def depsLibs = this.rootProject.depsLibs
+    //兼容包
+    api depsLibs.appcompat
+    api depsLibs.swiperefreshlayout
+    //material组件
+    api depsLibs.material
+    api depsLibs.recyclerview
+    //约束布局
+    api depsLibs.constraintlayout
+    //navigation导航
+    api depsLibs.navigationfragment
+    api depsLibs.navigationui
+    api depsLibs.multidex
+    //包含了 viewmodel 和 livedata
+    api depsLibs.lifecycle
+    //或者指明使用viewmodel
+    api depsLibs.viewmodel
+    //或者指明使用livedata
+    api depsLibs.livedata
+    api depsLibs.livedatacore
+    //注解使用生命周期编译器
+    annotationProcessor depsLibs.lifecyclecompiler
+    //paging分页组件
+    api depsLibs.paging
+    //room数据库
+    api depsLibs.room
+    //api depsLibs.roomrxjava2
+    annotationProcessor depsLibs.roomcompiler
+    //room数据库
+    //workmanager
+    api depsLibs.work
+    //视频播放组件
+    api depsLibs.exoplayercore
+    api depsLibs.exoplayerdash
+    api depsLibs.exoplayerui
+    //上拉刷新下拉加载
+    api depsLibs.SmartRefreshLayout
+    //下拉加载头部样式
+    api depsLibs.SmartRefreshHeader
+    //fastjson解析
+    api depsLibs.fastjson
+    //图片加载
+    api depsLibs.glide
+    api depsLibs.glidetransformations
+    annotationProcessor depsLibs.glidecompiler
+}

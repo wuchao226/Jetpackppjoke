@@ -1,0 +1,2 @@
+include ':app', ':libnavannotation', ':libnavcompiler', ':libcommon', ':libnetwork'
+rootProject.name='Jetpackppjoke'

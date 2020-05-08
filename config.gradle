@@ -1,0 +1,102 @@
+ext {
+    android = [
+            compileSdkVersion: 29,
+            applicationId    : 'com.wuc.jetpackppjoke',
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0",
+            multiDexEnabled  : true,
+    ]
+    depsVersion = [
+            appcompat                 : '1.1.0',
+            constraintlayout          : '1.1.3',
+            material                  : '1.0.0',
+            recyclerview              : '1.1.0',
+            swiperefreshlayout        : '1.0.0',
+            navigation                : '2.1.0',
+            localbroadcastmanager     : '1.0.0',
+            okhttp                    : '4.2.0',
+            rxjava                    : '2.2.12',
+            rxandroid                 : '2.1.1',
+            retrofit                  : '2.6.1',
+            arouterapi                : '1.5.0',
+            aroutercompiler           : '1.2.2',
+            gson                      : '2.8.5',
+            fastjson                  : '1.2.61',
+            glide                     : '4.9.0',
+            glidecompiler             : '4.9.0',
+            eventbus                  : '3.1.1',
+            greendao                  : '3.2.2',
+            multidex                  : '2.0.1',
+            autoservice               : '1.0-rc6',
+            lifecycle_version         : '2.1.0',
+            paging_version            : '2.1.0',
+            room_version              : '2.2.2',
+            work_version              : '2.2.0',
+            exoplayer_version         : '2.11.4',
+            smartRefreshLayout_version: '1.1.0',
+    ]
+    depsLibs = [
+            //support
+            appcompat             : "androidx.appcompat:appcompat:${depsVersion.appcompat}",
+            swiperefreshlayout    : "androidx.swiperefreshlayout:swiperefreshlayout:${depsVersion.swiperefreshlayout}",
+            localbroadcastmanager : "androidx.localbroadcastmanager:localbroadcastmanager:${depsVersion.localbroadcastmanager}",
+            constraintlayout      : "androidx.constraintlayout:constraintlayout:${depsVersion.constraintlayout}",
+            material              : "com.google.android.material:material:${depsVersion.material}",
+            recyclerview          : "androidx.recyclerview:recyclerview:${depsVersion.recyclerview}",
+            navigationfragment    : "androidx.navigation:navigation-fragment:${depsVersion.navigation}",
+            navigationui          : "androidx.navigation:navigation-ui:${depsVersion.navigation}",
+            //Jetpack
+            lifecycle             : "androidx.lifecycle:lifecycle-extensions:${depsVersion.lifecycle_version}",
+            viewmodel             : "androidx.lifecycle:lifecycle-viewmodel:${depsVersion.lifecycle_version}",
+            livedata              : "androidx.lifecycle:lifecycle-livedata:${depsVersion.lifecycle_version}",
+            livedatacore          : "androidx.lifecycle:lifecycle-livedata-core:${depsVersion.lifecycle_version}",
+            //注解使用生命周期编译器
+            lifecyclecompiler     : "androidx.lifecycle:lifecycle-compiler:${depsVersion.lifecycle_version}",
+            //paging分页组件
+            paging                : "androidx.paging:paging-runtime:${depsVersion.paging_version}",
+            //room数据库
+            room                  : "androidx.room:room-runtime:${depsVersion.room_version}",
+            roomcompiler          : "androidx.room:room-compiler:${depsVersion.room_version}",
+            roomrxjava2           : "androidx.room:room-rxjava2:${depsVersion.room_version}",
+            //workmanager
+            work                  : "androidx.work:work-runtime:${depsVersion.work_version}",
+            multidex              : "androidx.multidex:multidex:${depsVersion.multidex}",
+            //http
+            okhttp                : "com.squareup.okhttp3:okhttp:${depsVersion.okhttp}",
+            okhttpLogging         : "com.squareup.okhttp3:logging-interceptor:${depsVersion.okhttp}",
+            retrofit              : "com.squareup.retrofit2:retrofit:${depsVersion.retrofit}",
+            retrofitGsonConverter : "com.squareup.retrofit2:converter-gson:${depsVersion.retrofit}",
+            retrofitRxjava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:${depsVersion.retrofit}",
+            //rx
+            rxjava                : "io.reactivex.rxjava2:rxjava:${depsVersion.rxjava}",
+            rxandroid             : "io.reactivex.rxjava2:rxandroid:${depsVersion.rxandroid}",
+            //arouter
+            arouterapi            : "com.alibaba:arouter-api:${depsVersion.arouterapi}",
+            aroutercompiler       : "com.alibaba:arouter-compiler:${depsVersion.aroutercompiler}",
+            //视频播放组件
+            exoplayercore         : "com.google.android.exoplayer:exoplayer-core:${depsVersion.exoplayer_version}",
+            exoplayerdash         : "com.google.android.exoplayer:exoplayer-dash:${depsVersion.exoplayer_version}",
+            exoplayerui           : "com.google.android.exoplayer:exoplayer-ui:${depsVersion.exoplayer_version}",
+            //gson
+            gson                  : "com.google.code.gson:gson:${depsVersion.gson}",
+            //glide
+            glide                 : "com.github.bumptech.glide:glide:${depsVersion.glide}",
+            glidetransformations  : "jp.wasabeef:glide-transformations:4.0.0",
+            glidecompiler         : "com.github.bumptech.glide:compiler:${depsVersion.glidecompiler}",
+            //eventbus
+            eventbus              : "org.greenrobot:eventbus:${depsVersion.eventbus}",
+            //greendao
+            greendao              : "org.greenrobot:greendao:${depsVersion.greendao}",
+            //fastjson解析
+            fastjson              : "com.alibaba:fastjson:${depsVersion.fastjson}",
+            //auto-service 注解框架
+            autoservice           : "com.google.auto.service:auto-service:${depsVersion.autoservice}",
+            //上拉刷新下拉加载
+            SmartRefreshLayout    : "com.scwang.smartrefresh:SmartRefreshLayout:${depsVersion.smartRefreshLayout_version}",
+            //下拉加载头部样式
+            SmartRefreshHeader    : "com.scwang.smartrefresh:SmartRefreshHeader:${depsVersion.smartRefreshLayout_version}",
+
+    ]
+}

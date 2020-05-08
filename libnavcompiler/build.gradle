@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':libnavannotation')
+    def depsLibs = this.rootProject.depsLibs
+    implementation depsLibs.fastjson
+    //注解框架
+    api depsLibs.autoservice
+    annotationProcessor depsLibs.autoservice
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

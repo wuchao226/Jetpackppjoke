@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion this.rootProject.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion this.rootProject.android.minSdkVersion
+        targetSdkVersion this.rootProject.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(path: ':libcommon')
+
+    def depsLibs = this.rootProject.depsLibs
+    //okhttp 网络库
+    api depsLibs.okhttp
+    api depsLibs.okhttpLogging
+
+    //room数据库
+    annotationProcessor depsLibs.roomcompiler
+    annotationProcessor depsLibs.lifecyclecompiler
+}

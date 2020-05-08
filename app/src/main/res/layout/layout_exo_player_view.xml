@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.exoplayer2.ui.PlayerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/player_view"
+    android:keepScreenOn="true"
+    app:use_controller="false"
+    app:show_timeout="1000"
+    app:keep_content_on_player_reset="false"
+    app:surface_type="texture_view"
+    app:resize_mode="zoom"
+    app:show_buffering="never"
+    app:player_layout_id="@layout/layout_simple_exo_player_view">
+    <!--  android:keepScreenOn="true" 屏幕常亮   -->
+    <!--  app:use_controller="false" 是否使用 PlayerView 提供的默认控制器（视频加载、播放）   -->
+    <!--  app:show_timeout="1000" 自定义的播放控制器和 PlayerView 绑定时，
+    这个播放控制器显示多久之后自动隐藏掉   -->
+    <!--  app:keep_content_on_player_reset="false" player 重置时是否需要保留最后一帧，
+    true：列表上下滑动时可能出现上个视频的最后一帧  -->
+    <!--  app:surface_type="texture_view" 指定显示视频画面 View 的类型  -->
+    <!--  app:resize_mode="zoom" 视频画面帧 的缩放形式 -->
+    <!--  app:show_buffering="never" 当视频缓冲加载时是否需要显示默认的loading加载框 -->
+    <!--  app:player_layout_id="@layout/layout_simple_exo_player_view"
+     指定 PlayerView 的布局样式 -->
+</com.google.android.exoplayer2.ui.PlayerView>

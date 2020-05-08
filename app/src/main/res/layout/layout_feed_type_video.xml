@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="feed"
+            type="com.wuc.jetpackppjoke.model.Feed" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_10">
+
+        <include
+            layout="@layout/layout_feed_author"
+            app:user="@{feed.author}" />
+
+        <include
+            layout="@layout/layout_feed_text"
+            app:feedText="@{feed.feeds_text}"
+            app:lines="@{3}" />
+
+        <!--   视频区域-->
+        <com.wuc.jetpackppjoke.view.ListPlayerView
+            android:id="@+id/list_player_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10" />
+
+        <include
+            layout="@layout/layout_feed_tag"
+            app:tagText="@{feed.activityText}" />
+
+        <include
+            layout="@layout/layout_feed_top_comment"
+            app:comment="@{feed.topComment}" />
+
+        <include
+            android:id="@+id/interaction_binding"
+            layout="@layout/layout_feed_interaction"
+            app:feed="@{feed}" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
