@@ -26,20 +26,13 @@ public class PageListPlay {
     public PlayerView playerView;
     public PlayerControlView controlView;
     /**
-     * 正在播放的视频 url
+     * 代表正在播放的视频 url，并用来判断 exoPlayer 之前播放的url和即将要播放的url是否是同一个媒体资源
+     * 如果是同一个只需要恢复继续播放即可，反正创建新的 MediaSource 给 exoPlayer 去播放
      */
     public String playUrl;
 
     public PageListPlay() {
         Application application = AppGlobals.getApplication();
-        //创建exoplayer播放器实例
-       /* mExoPlayer = ExoPlayerFactory.newSimpleInstance(application,
-                //视频每一这的画面如何渲染,实现默认的实现类
-                new DefaultRenderersFactory(application),
-                //视频的音视频轨道如何加载,使用默认的轨道选择器
-                new DefaultTrackSelector(application),
-                //视频缓存控制逻辑,使用默认的即可
-                new DefaultLoadControl());*/
         //创建exoplayer播放器实例
         exoPlayer = new SimpleExoPlayer.Builder(application,
                 //视频每一这的画面如何渲染,实现默认的实现类

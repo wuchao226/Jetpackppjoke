@@ -37,7 +37,7 @@
         android:paddingRight="16dp"
         android:textColor="#ffffff"
         android:textSize="14sp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:backgroundTint="#ff678f"
         app:cornerRadius="20dp"
         tools:text="朕知道了">

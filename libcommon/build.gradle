@@ -64,6 +64,8 @@ dependencies {
     api depsLibs.SmartRefreshLayout
     //下拉加载头部样式
     api depsLibs.SmartRefreshHeader
+    //viewpager2 可以禁止预加载
+    api "androidx.viewpager2:viewpager2:1.1.0-alpha01"
     //fastjson解析
     api depsLibs.fastjson
     //图片加载

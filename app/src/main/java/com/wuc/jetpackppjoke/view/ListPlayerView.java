@@ -230,6 +230,9 @@ public class ListPlayerView extends FrameLayout implements IPlayTarget, PlayerCo
             exoPlayer.prepare(mediaSource);
             //循环播放模式
             exoPlayer.setRepeatMode(Player.REPEAT_MODE_ONE);
+            //开启新的视频播放后把视频的url保存到 PageListPlay 对象里；
+            //用来判断 exoPlayer 之前播放的url和即将要播放的url是否是同一个媒体资源，
+            //如果是同一个只需要恢复继续播放即可，反正创建新的 MediaSource 给 exoPlayer 去播放
             pageListPlay.playUrl = mVideoUrl;
         }
         controlView.show();

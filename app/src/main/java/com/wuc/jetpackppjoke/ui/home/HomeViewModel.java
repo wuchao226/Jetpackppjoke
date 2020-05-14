@@ -72,13 +72,15 @@ public class HomeViewModel extends AbsViewModel<Feed> {
         Request request = ApiService.get("/feeds/queryHotFeedsList")
                 .addParam("feedType", mFeedType)
                 .addParam("userId", UserManager.get().getUserId())
-                //.addParam("userId", UserManager.get().getUserId())
                 .addParam("feedId", key)
                 .addParam("pageCount", count)
                 .responseType(new TypeReference<ArrayList<Feed>>() {
                 }.getType());
 
         if (witchCache) {
+            if (request != null) {
+
+            }
             request.cacheStrategy(Request.CACHE_ONLY);
             request.execute(new JsonCallback<List<Feed>>() {
                 @Override

@@ -122,7 +122,7 @@ public abstract class AbsListFragment<T, M extends AbsViewModel<T>> extends Frag
      */
     public void finishRefresh(boolean hasData) {
         PagedList<T> currentList = adapter.getCurrentList();
-        hasData = hasData || currentList != null || currentList.size() > 0;
+        hasData = hasData || currentList != null && currentList.size() > 0;
         //获取当前状态
         RefreshState state = mRefreshLayout.getState();
         // state 是 Footer 或正在刷新状态

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.wuc.jetpackppjoke.BR;
+import com.wuc.jetpackppjoke.R;
 import com.wuc.jetpackppjoke.databinding.LayoutFeedTypeImageBinding;
 import com.wuc.jetpackppjoke.databinding.LayoutFeedTypeVideoBinding;
 import com.wuc.jetpackppjoke.model.Feed;
@@ -14,7 +15,6 @@ import com.wuc.jetpackppjoke.view.ListPlayerView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ViewDataBinding;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.paging.PagedListAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
@@ -70,7 +70,12 @@ public class FeedAdapter extends PagedListAdapter<Feed, FeedAdapter.ViewHolder> 
     @Override
     public int getItemViewType(int position) {
         Feed feed = getItem(position);
-        return feed.itemType;
+        if (feed.itemType == Feed.TYPE_IMAGE_TEXT) {
+            return R.layout.layout_feed_type_image;
+        } else if (feed.itemType == Feed.TYPE_VIDEO) {
+            return R.layout.layout_feed_type_video;
+        }
+        return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -93,14 +98,14 @@ public class FeedAdapter extends PagedListAdapter<Feed, FeedAdapter.ViewHolder> 
                 LayoutFeedTypeImageBinding imageBinding = (LayoutFeedTypeImageBinding) mBinding;
                 feedImage = imageBinding.feedImage;
                 imageBinding.feedImage.bindData(item.width, item.height, 16, item.cover);
-                imageBinding.setFeed(item);
-                imageBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
+                //imageBinding.setFeed(item);
+                //imageBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
             } else if (mBinding instanceof LayoutFeedTypeVideoBinding) {
                 LayoutFeedTypeVideoBinding videoBinding = (LayoutFeedTypeVideoBinding) mBinding;
                 videoBinding.listPlayerView.bindData(mCategory, item.width, item.height, item.cover, item.url);
                 listPlayerView = videoBinding.listPlayerView;
-                videoBinding.setFeed(item);
-                videoBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
+               // videoBinding.setFeed(item);
+                //videoBinding.interactionBinding.setLifeCycleOwner((LifecycleOwner) mContext);
             }
         }
 

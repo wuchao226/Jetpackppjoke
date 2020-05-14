@@ -31,6 +31,10 @@ public class PageListPlayManager {
      * 播放媒体的MediaSource
      */
     private static final ProgressiveMediaSource.Factory mediaSourceFactory;
+    /**
+     * 存储每一个页面对应的 PageListPlay 对象
+     * key：String类型的，代表每一个页面的生成标志
+     */
     private static HashMap<String, PageListPlay> sPageListPlayHashMap = new HashMap<>();
 
     static {
@@ -71,6 +75,9 @@ public class PageListPlayManager {
         return mediaSourceFactory.createMediaSource(Uri.parse(url));
     }
 
+    /**
+     * 获取每一个页面的 PageListPlay 对象
+     */
     public static PageListPlay get(String pageName) {
         PageListPlay pageListPlay = sPageListPlayHashMap.get(pageName);
         if (pageListPlay == null) {
@@ -80,6 +87,9 @@ public class PageListPlayManager {
         return pageListPlay;
     }
 
+    /**
+     * 销毁
+     */
     public static void release(String pageName) {
         PageListPlay pageListPlay = sPageListPlayHashMap.get(pageName);
         if (pageListPlay != null) {
